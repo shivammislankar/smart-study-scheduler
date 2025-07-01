@@ -40,10 +40,7 @@ export default function StudyPage() {
     }
   }
 
-  const getFlashcardCount = async (topicId: number) => {
-    const stats = await getTopicReviewStats(topicId)
-    return stats.dueCards
-  }
+  
 
   const handleTopicSelect = async (topicId: number) => {
     setSelectedTopic(topicId)
