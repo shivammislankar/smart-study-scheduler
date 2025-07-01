@@ -134,7 +134,7 @@ export default function StudyPage() {
             <TopicList 
               topics={topics} 
               onTopicSelect={handleTopicSelect}
-              getFlashcardCount={getFlashcardCount}
+              
             />
           </div>
         ) : (
@@ -232,7 +232,7 @@ export default function StudyPage() {
                   🎉 Session Complete!
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  You've completed all {getCurrentTopicCards().length} flashcards for {topics.find(t => t.id === selectedTopic)?.name}
+                  {`You've completed all {getCurrentTopicCards().length} flashcards for {topics.find(t => t.id === selectedTopic)?.name`}
                 </p>
                 
                 {/* Ratings Summary */}
@@ -279,11 +279,11 @@ export default function StudyPage() {
 function TopicList({ 
   topics, 
   onTopicSelect, 
-  getFlashcardCount 
+  
 }: { 
   topics: Topic[]
   onTopicSelect: (topicId: number) => void
-  getFlashcardCount: (topicId: number) => Promise<number>
+ 
 }) {
   const [topicStats, setTopicStats] = useState<Record<number, {dueCards: number, totalCards: number}>>({})
 
